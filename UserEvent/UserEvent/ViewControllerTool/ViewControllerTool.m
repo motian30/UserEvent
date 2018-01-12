@@ -14,13 +14,10 @@
     UIViewController *result = nil;
     
     UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal)
-    {
+    if (window.windowLevel != UIWindowLevelNormal){
         NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(UIWindow * tmpWin in windows)
-        {
-            if (tmpWin.windowLevel == UIWindowLevelNormal)
-            {
+        for(UIWindow * tmpWin in windows){
+            if (tmpWin.windowLevel == UIWindowLevelNormal){
                 window = tmpWin;
                 break;
             }

@@ -20,7 +20,6 @@
 		9F53C9052008986700993BFC /* AppDelegate+UserEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8EF2008986700993BFC /* AppDelegate+UserEvent.m */; };
 		9F53C9072008986700993BFC /* UIControl+userEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8F32008986700993BFC /* UIControl+userEvent.m */; };
 		9F53C9082008986700993BFC /* UIGestureRecognizer+UserEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8F52008986700993BFC /* UIGestureRecognizer+UserEvent.m */; };
-		9F53C9092008986700993BFC /* UIScrollView+UserEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8F72008986700993BFC /* UIScrollView+UserEvent.m */; };
 		9F53C90A2008986700993BFC /* UITableView+UserContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8F92008986700993BFC /* UITableView+UserContent.m */; };
 		9F53C90B2008986700993BFC /* UIViewController+UserEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8FB2008986700993BFC /* UIViewController+UserEvent.m */; };
 		9F53C90C2008986700993BFC /* UserEventDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F53C8FE2008986700993BFC /* UserEventDataTool.m */; };
@@ -71,8 +70,6 @@
 		9F53C8F32008986700993BFC /* UIControl+userEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+userEvent.m"; sourceTree = "<group>"; };
 		9F53C8F42008986700993BFC /* UIGestureRecognizer+UserEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+UserEvent.h"; sourceTree = "<group>"; };
 		9F53C8F52008986700993BFC /* UIGestureRecognizer+UserEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+UserEvent.m"; sourceTree = "<group>"; };
-		9F53C8F62008986700993BFC /* UIScrollView+UserEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UserEvent.h"; sourceTree = "<group>"; };
-		9F53C8F72008986700993BFC /* UIScrollView+UserEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UserEvent.m"; sourceTree = "<group>"; };
 		9F53C8F82008986700993BFC /* UITableView+UserContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+UserContent.h"; sourceTree = "<group>"; };
 		9F53C8F92008986700993BFC /* UITableView+UserContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+UserContent.m"; sourceTree = "<group>"; };
 		9F53C8FA2008986700993BFC /* UIViewController+UserEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+UserEvent.h"; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 				9F53C8F32008986700993BFC /* UIControl+userEvent.m */,
 				9F53C8F42008986700993BFC /* UIGestureRecognizer+UserEvent.h */,
 				9F53C8F52008986700993BFC /* UIGestureRecognizer+UserEvent.m */,
-				9F53C8F62008986700993BFC /* UIScrollView+UserEvent.h */,
-				9F53C8F72008986700993BFC /* UIScrollView+UserEvent.m */,
 				9F53C8F82008986700993BFC /* UITableView+UserContent.h */,
 				9F53C8F92008986700993BFC /* UITableView+UserContent.m */,
 				9F53C8FA2008986700993BFC /* UIViewController+UserEvent.h */,
@@ -365,7 +360,6 @@
 				9F53C90B2008986700993BFC /* UIViewController+UserEvent.m in Sources */,
 				9F53C9082008986700993BFC /* UIGestureRecognizer+UserEvent.m in Sources */,
 				9F53C9072008986700993BFC /* UIControl+userEvent.m in Sources */,
-				9F53C9092008986700993BFC /* UIScrollView+UserEvent.m in Sources */,
 				9F53C86A200897C500993BFC /* AppDelegate.m in Sources */,
 				9F53C87B200897C500993BFC /* main.m in Sources */,
 				9F53C9052008986700993BFC /* AppDelegate+UserEvent.m in Sources */,
