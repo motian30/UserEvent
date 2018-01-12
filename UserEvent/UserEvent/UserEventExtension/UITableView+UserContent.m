@@ -60,9 +60,7 @@
     SEL sel = GET_CLASS_CUSTOM_SEL(@selector(tableView:didSelectRowAtIndexPath:),[self class]);
     
     if ([self respondsToSelector:sel]) {
-        IMP imp = [self methodForSelector:sel];
-        void (*func)(id, SEL,id,id) = (void *)imp;
-        func(self, sel,tableView,indexPath);
+        ((void (*)(void *, SEL,  id ,id ))objc_msgSend)((__bridge void *)(self), sel , tableView,indexPath);
     }
     
     UITableViewCell *selectCell = [tableView cellForRowAtIndexPath:indexPath];

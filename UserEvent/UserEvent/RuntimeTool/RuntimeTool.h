@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-
-
+#import <objc/message.h>
 
 @interface RuntimeTool : NSObject
 

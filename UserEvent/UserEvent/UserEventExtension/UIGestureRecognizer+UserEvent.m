@@ -48,6 +48,7 @@ static char* CurrentCls = "CurrentCls";
         
     }
     return [self replaceInitWithTarget:target action:action];
+    
 }
 
 - (void)replaceRecogniaze:(id)sender{
@@ -57,9 +58,7 @@ static char* CurrentCls = "CurrentCls";
     SEL sel = GET_CLASS_CUSTOM_SEL(NSSelectorFromString(gesture.currentAcion),[self class]);
     
     if ([self respondsToSelector:sel]) {
-        IMP imp = [self methodForSelector:sel];
-        void (*func)(id, SEL,id) = (void *)imp;
-        func(self, sel,sender);
+        ((void (*)(void *, SEL,  id ))objc_msgSend)((__bridge void *)(self), sel , sender);
     }
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
