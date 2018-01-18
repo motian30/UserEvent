@@ -34,21 +34,23 @@ static char* CurrentCls = "CurrentCls";
     NSString *targetClass = NSStringFromClass([target class]);
     NSString *actionName = NSStringFromSelector(action);
     
-    if (action && target && ![UserEventDataTool isSystemClassWith:[target class]]) {
+    if (action && target) {
         
-        [RuntimeTool class_addMethod:[target class]
-                                    selector:GET_CLASS_CUSTOM_SEL(action,[target class])
-                                         imp:method_getImplementation(class_getInstanceMethod([self class],@selector(replaceRecogniaze:)))
-                                       types:"v@:"];
-        
-        [RuntimeTool replaceForClass:[target class] Selector:action replaceSelector:GET_CLASS_CUSTOM_SEL(action,[target class])];
-        
-        self.currentAcion = actionName;
-        self.currentCls = targetClass;
-        
+        if (![UserEventDataTool isSystemClassWith:[target class]]) {
+            
+            [RuntimeTool class_addMethod:[target class]
+                                        selector:GET_CLASS_CUSTOM_SEL(action,[target class])
+                                             imp:method_getImplementation(class_getInstanceMethod([self class],@selector(replaceRecogniaze:)))
+                                           types:"v@:"];
+            
+            [RuntimeTool replaceForClass:[target class] Selector:action replaceSelector:GET_CLASS_CUSTOM_SEL(action,[target class])];
+            
+            self.currentAcion = actionName;
+            self.currentCls = targetClass;
+        }
     }
+
     return [self replaceInitWithTarget:target action:action];
-    
 }
 
 - (void)replaceRecogniaze:(id)sender{
@@ -61,7 +63,7 @@ static char* CurrentCls = "CurrentCls";
         ((void (*)(void *, SEL,  id ))objc_msgSend)((__bridge void *)(self), sel , sender);
     }
     
-    if (gesture.state == UIGestureRecognizerStateEnded) {
+    if (gesture.state == UIGestureRecognizerStateEnded &&  ![NSStringFromClass([self class]) containsString:@"IQKeyboardManager"]) {
         if ([UserEventDataTool infoDictWithTarget:gesture.currentCls Action:gesture.currentAcion]) {
             NSMutableDictionary *datadic = [UserEventDataTool infoDictWithTarget:gesture.currentCls Action:gesture.currentAcion];
 

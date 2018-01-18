@@ -73,15 +73,18 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSString *currentDateString = [dateFormatter stringFromDate:currentDate];
   
-    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults]objectForKey:@"userName"],@"UserName",currentDateString,@"LocalDateTime",@"App",@"TerminalName",nil];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults]objectForKey:@"userName"],@"UserName",currentDateString,@"LocalDateTime",nil];
     
     UIViewController * controller = [ViewControllerTool getCurrentController];
     
+    NSString *LoggerName = nil;
     if (controller == nil) {
-        return nil;
+        LoggerName = [NSString stringWithFormat:@"%@ - %@",targetStr,targetStr];
+    }else{
+        LoggerName = [NSString stringWithFormat:@"%@ - %@",IsStrEmpty(controller.title) ? NSStringFromClass([controller class]) : controller.title,targetStr];
     }
     
-    NSString *LoggerName = [NSString stringWithFormat:@"%@ - %@",IsStrEmpty(controller.title) ? NSStringFromClass([controller class]) : controller.title,targetStr];
+    
     
     [dic setObject:LoggerName forKey:@"LoggerName"];
     [dic setObject:actionStr forKey:@"LogMessage"];
